@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Todo Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&family=Metal+Mania&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet " href="style.css ">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- heading,todo input area, tags -->
+    <div style="text-align: center;">
+
+        <!-- heading -->
+        <h1 class="heading">Todo Assistant</h1>
+
+        <!-- todo input -->
+        <textarea id="taskInput" class="task-input" rows="1" cols="60" placeholder=""></textarea><br/>
+        <!-- extra detailes for todo -->
+        <div class="d-flex flex-row extra-detail-con">
+
+            <!-- set date, time for todo -->
+            <div class="d-flex flex-row" style="margin-right: auto;">
+                <!-- set date & time-->
+                <div><input id="datetime" style="width: 170px; margin-left: 5px;" type="datetime-local" /></div>
+            </div>
+
+
+
+            <!-- importance container -->
+            <div class="d-flex flex-row" style="margin-left: 0px; margin-top: 2px;">
+                <!-- tag -->
+                <div>
+                    <h1 class="importance-title">Tag: </h1>
+                </div>
+
+                <!-- high level importance -->
+                <div><input class="inportance-check-imput" type="radio" value="high" name="tag" id="high"></div>
+                <div class="high-tag-indi">
+                    <p class="importance-level">High</p>
+                </div>
+
+                <!-- medium level importance -->
+                <div><input class="inportance-check-imput" type="radio" value="medium" name="tag" id="medium"></div>
+                <div class="medium-tag-indi">
+                    <p class="importance-level">Medium</p>
+                </div>
+
+                <!-- low level importance -->
+                <div><input class="inportance-check-imput" type="radio" value="low" name="tag" id="low"></div>
+                <div class="low-tag-indi">
+                    <p class="importance-level">Low</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <!-- add button -->
+    <button id="addBtn" class="add-btn btn btn-primary">Add</button><br/>
+
+    <!-- seperation line -->
+    <div style="background-color:white; height: 1px; margin-top: 15px; margin-left: 10px; margin-right: 10px; "></div>
+
+    <!-- today task, v-line, calender -->
+    <div class="d-flex flex-row">
+        <!-- today tasks -->
+        <div class="d-flex flex-column today-todo-list " id="todaytaskheadcontainer">
+
+        </div>
+        <!-- vertical line -->
+        <div class="v-line-a"></div>
+        <!-- callender calender-container-->
+        <div class="calender-container" style="margin-left: auto;">
+            <div class="calendar">
+                <div class="header">
+                    <button onclick="changeYear(-1)">«</button>
+                    <button onclick="changeMonth(-1)">‹</button>
+                    <div class="month-year" id="monthYear"></div>
+                    <button onclick="changeMonth(1)">›</button>
+                    <button onclick="changeYear(1)">»</button>
+                    <button onclick="resetToToday()" id="resettodo"><i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+                </div>
+
+                <div class="days">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+
+                <div class="dates" id="dates"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- seperation line -->
+    <div style="background-color:white; height: 1px; margin-top: 5px; margin-left: 10px; margin-right: 10px; "></div>
+
+    <!-- all tasks heading -->
+    <h1 class="your-task-title">Your Tasks</h1>
+    <!-- all tasks -->
+    <div class="d-flex flex-column all-todo-list" id="alltaskheadcontainer">
+
+    </div>
+
+    <div class="d-flex flex-column">
+        <!-- save & reset button -->
+        <div class="d-flex flex-row justify-content-center btn-con">
+            <!-- save button -->
+            <button class="save-btn btn btn-info">Save</button><br/>
+            <!-- reset button -->
+            <button class="reset-btn btn btn-danger">Reset</button><br/>
+        </div>
+
+        <div class="d-flex flex-row justify-content-center query-con">
+            <textarea class="query-input" rows="1" cols="60" placeholder="ask me anything..."></textarea>
+            <div class="send-con">
+                <div class="send-btn">
+                    <svg viewBox="0 0 24 24" fill="#2b3b5a" width="40" height="30">
+                      <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z"/>
+                    </svg>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    </div>
+
+    <!-- agent input -->
+
+    </div>
+
+</body>
+
+</html>
